@@ -38,6 +38,7 @@ See [docs/SETUP.md](docs/SETUP.md) for detailed setup instructions.
    npm install
    cp .env.example .env
    # Edit .env with your database credentials
+   # Set CORS_ORIGIN for production (comma-separated): CORS_ORIGIN=http://localhost:5173,https://korean-with-us-dashboard.netlify.app
    npm run dev
    ```
 
