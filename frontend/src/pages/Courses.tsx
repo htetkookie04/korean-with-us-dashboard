@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCourses, useCreateCourse } from '../hooks/useCourses'
+import type { Course } from '../hooks/useCourses'
 import Modal from '../components/Modal'
 import CourseForm, { CourseFormData } from '../components/forms/CourseForm'
 
@@ -43,7 +44,7 @@ export default function Courses() {
         <div className="text-center py-12">Loading...</div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {courses.map((course) => (
+          {courses.map((course: Course) => (
             <Link
               key={course.id}
               to={`/courses/${course.id}`}

@@ -159,7 +159,7 @@ export default function Timetable() {
               </tr>
             </thead>
             <tbody>
-              {entries.map((entry) => (
+              {entries.map((entry: TimetableEntry) => (
                 <tr key={entry.id}>
                   <td className="font-medium">{entry.course_name}</td>
                   <td>

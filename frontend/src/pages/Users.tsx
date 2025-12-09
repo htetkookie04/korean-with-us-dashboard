@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useUsers, useCreateUser } from '../hooks/useUsers'
+import type { User } from '../hooks/useUsers'
 import Modal from '../components/Modal'
 import UserForm, { UserFormData } from '../components/forms/UserForm'
 
@@ -73,7 +74,7 @@ export default function Users() {
               </tr>
             </thead>
             <tbody>
-              {users.map((user) => (
+              {users.map((user: User) => (
                 <tr key={user.id}>
                   <td>
                     {user.first_name} {user.last_name}

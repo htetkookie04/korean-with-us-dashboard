@@ -106,7 +106,7 @@ export default function Gallery() {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {items.map((item) => (
+          {items.map((item: GalleryItem) => (
             <div
               key={item.id}
               draggable

@@ -39,7 +39,7 @@ interface User {
   email: string
 }
 
-export default function ScheduleForm({ courseId, onSubmit, onCancel, isLoading, initialData }: ScheduleFormProps) {
+export default function ScheduleForm({ courseId: _courseId, onSubmit, onCancel, isLoading, initialData }: ScheduleFormProps) {
   const [teachers, setTeachers] = useState<User[]>([])
   const [loadingTeachers, setLoadingTeachers] = useState(false)
 

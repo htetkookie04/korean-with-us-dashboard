@@ -56,8 +56,7 @@ export default function EnrollmentForm({ onSubmit, onCancel, isLoading, initialD
     handleSubmit,
     watch,
     formState: { errors },
-    reset,
-    setValue
+    reset
   } = useForm<EnrollmentFormData>({
     resolver: zodResolver(enrollmentSchema),
     defaultValues: {

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useEnrollments, useCreateEnrollment, useApproveEnrollment, Enrollment } from '../hooks/useEnrollments'
+import { useEnrollments, useCreateEnrollment, useApproveEnrollment } from '../hooks/useEnrollments'
+import type { Enrollment } from '../hooks/useEnrollments'
 import Modal from '../components/Modal'
 import EnrollmentForm, { EnrollmentFormData } from '../components/forms/EnrollmentForm'
 
@@ -91,7 +92,7 @@ export default function Enrollments() {
               </tr>
             </thead>
             <tbody>
-              {enrollments.map((enrollment) => (
+              {enrollments.map((enrollment: Enrollment) => (
                 <tr key={enrollment.id}>
                   <td>
                     {enrollment.first_name} {enrollment.last_name}

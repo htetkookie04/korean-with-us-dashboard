@@ -5,6 +5,7 @@ import CourseForm, { CourseFormData } from '../components/forms/CourseForm'
 import ScheduleForm, { ScheduleFormData } from '../components/forms/ScheduleForm'
 import Modal from '../components/Modal'
 import { useSchedules, useCreateSchedule } from '../hooks/useSchedules'
+import type { Schedule } from '../hooks/useSchedules'
 
 export default function CourseDetail() {
   const { id } = useParams()
@@ -183,7 +184,7 @@ export default function CourseDetail() {
             <p className="text-gray-600 text-sm">No schedules yet.</p>
           ) : (
             <div className="space-y-3">
-              {schedules.map((schedule) => (
+              {schedules.map((schedule: Schedule) => (
                 <div key={schedule.id} className="border border-gray-200 rounded-lg p-3">
                   <p className="font-medium text-sm">
                     {new Date(schedule.start_time).toLocaleString()} -{' '}
