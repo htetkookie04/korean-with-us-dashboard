@@ -61,9 +61,6 @@ See [docs/SETUP.md](docs/SETUP.md) for detailed setup instructions.
 - ✅ Course & schedule management
 - ✅ Enrollment workflow (pending → approved → active)
 - ✅ Payment tracking
-- ✅ Inquiries & support inbox
-- ✅ Analytics & reports
-- ✅ AI-powered insights and suggestions
 - ✅ Activity logging & audit trail
 
 ## Documentation
@@ -72,7 +69,6 @@ See [docs/SETUP.md](docs/SETUP.md) for detailed setup instructions.
 - **[API Documentation](docs/API.md)** - All API endpoints
 - **[Architecture](docs/ARCHITECTURE.md)** - System architecture overview
 - **[Database Schema](database/README.md)** - Database structure and relationships
-- **[AI Prompt Examples](docs/AI_PROMPTS.md)** - Example prompts for AI-assisted development
 
 ## License
 
