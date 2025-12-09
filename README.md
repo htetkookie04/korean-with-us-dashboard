@@ -72,6 +72,7 @@ See [docs/SETUP.md](docs/SETUP.md) for detailed setup instructions.
 - **[API Documentation](docs/API.md)** - All API endpoints
 - **[Architecture](docs/ARCHITECTURE.md)** - System architecture overview
 - **[Database Schema](database/README.md)** - Database structure and relationships
+- **[AI Prompt Examples](docs/AI_PROMPTS.md)** - Example prompts for AI-assisted development
 
 ## License
 
