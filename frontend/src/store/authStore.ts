@@ -1,6 +1,5 @@
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
-import { api } from '../lib/api'
 
 interface User {
   id: number
@@ -30,16 +29,30 @@ export const useAuthStore = create<AuthState>()(
       refreshToken: null,
       isAuthenticated: false,
       login: async (email: string, password: string) => {
-        const response = await api.post('/auth/login', { email, password })
-        const { user, accessToken, refreshToken } = response.data.data
+        // Static login: no backend required. Accept a single demo user.
+        if (email !== 'admin@koreanwithus.com' || password !== 'admin123') {
+          throw new Error('Invalid credentials')
+        }
+
+        const user: User = {
+          id: 1,
+          email,
+          firstName: 'Admin',
+          lastName: 'User',
+          roleId: 1,
+          roleName: 'Super Admin'
+        }
+
+        // Fake tokens for client-side-only auth
+        const accessToken = 'static-access-token'
+        const refreshToken = 'static-refresh-token'
+
         set({
           user,
           accessToken,
           refreshToken,
           isAuthenticated: true
         })
-        // Set default auth header
-        api.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
       },
       logout: () => {
         set({
@@ -48,11 +61,9 @@ export const useAuthStore = create<AuthState>()(
           refreshToken: null,
           isAuthenticated: false
         })
-        delete api.defaults.headers.common['Authorization']
       },
       setTokens: (accessToken: string, refreshToken: string) => {
         set({ accessToken, refreshToken })
-        api.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
       },
       setUser: (user: User) => {
         set({ user })

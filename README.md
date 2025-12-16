@@ -6,9 +6,7 @@ Complete admin dashboard for managing users, courses, enrollments, content, comm
 
 ```
 .
-├── backend/          # Node.js + Express + TypeScript API
-├── frontend/         # React + Vite + TypeScript Dashboard
-├── database/         # PostgreSQL migrations and schema
+├── frontend/         # React + Vite + TypeScript Dashboard (static SPA)
 └── docs/            # Additional documentation
 ```
 
@@ -26,23 +24,7 @@ See [docs/SETUP.md](docs/SETUP.md) for detailed setup instructions.
 
 ### Quick Setup (TL;DR)
 
-1. **Database:**
-   ```bash
-   createdb korean_with_us
-   psql -d korean_with_us -f database/migrations/001_initial_schema.sql
-   ```
-
-2. **Backend:**
-   ```bash
-   cd backend
-   npm install
-   cp .env.example .env
-   # Edit .env with your database credentials
-   # Set CORS_ORIGIN for production (comma-separated): CORS_ORIGIN=http://localhost:5173,https://korean-with-us-dashboard.netlify.app
-   npm run dev
-   ```
-
-3. **Frontend:**
+1. **Frontend (static SPA only):**
    ```bash
    cd frontend
    npm install
@@ -50,7 +32,7 @@ See [docs/SETUP.md](docs/SETUP.md) for detailed setup instructions.
    npm run dev
    ```
 
-4. **Login:**
+2. **Login (static demo user):**
    - Open http://localhost:5173
    - Email: `admin@koreanwithus.com`
    - Password: `admin123` (⚠️ Change immediately!)
